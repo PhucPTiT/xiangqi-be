@@ -14,6 +14,4 @@ public class UserDTO {
     private String lastName;
     private String nickName;
     private String address;
-
-    private List<MatchDTO> matches;
 }

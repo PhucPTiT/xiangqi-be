@@ -18,6 +18,6 @@ public class Modal {
     private Long action;
 
     @OneToMany(mappedBy = "modal", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Match> matches;
+    private List<Matches> matches;
 
 }

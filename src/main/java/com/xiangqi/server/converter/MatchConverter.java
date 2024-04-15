@@ -1,7 +1,7 @@
 package com.xiangqi.server.converter;
 
 import com.xiangqi.server.dto.MatchDTO;
-import com.xiangqi.server.entity.Match;
+import com.xiangqi.server.entity.Matches;
 import com.xiangqi.server.entity.Modal;
 import com.xiangqi.server.entity.User;
 import com.xiangqi.server.repository.ModalRepository;
@@ -31,7 +31,7 @@ public class MatchConverter {
 
     @Autowired
     private static final String LOCAL_TIMEZONE = "Asia/Ho_Chi_Minh";
-    public MatchDTO toDTO(Match match) {
+    public MatchDTO toDTO(Matches match) {
         MatchDTO matchDTO = new MatchDTO();
         matchDTO.setId(match.getId());
         matchDTO.setTime(match.getTime().toString());
@@ -41,8 +41,8 @@ public class MatchConverter {
         return matchDTO;
     }
 
-    public Match toEntity(MatchDTO matchDTO) {
-        Match match = new Match();
+    public Matches toEntity(MatchDTO matchDTO) {
+        Matches match = new Matches();
         match.setId(matchDTO.getId());
         match.setTime(getCurrentTimeInLocalZone());
         match.setResult(matchDTO.getResult());
