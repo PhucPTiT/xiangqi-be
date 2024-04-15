@@ -21,6 +21,6 @@ public class User {
     private String address;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Match> matches;
+    private List<Matches> matches;
 
 }
