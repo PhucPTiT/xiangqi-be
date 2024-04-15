@@ -17,7 +17,7 @@ public class Modal {
     private Long depth;
     private Long action;
 
-    @OneToMany(mappedBy = "modal", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Matches> matches;
+//    @OneToMany(mappedBy = "modal", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<Matches> matches;
 
 }
