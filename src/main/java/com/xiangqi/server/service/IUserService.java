@@ -12,4 +12,6 @@ public interface IUserService {
     public void updateUser(Long id, UserDTO userDTO);
 
     public UserDTO login(UserDTO userDTO);
+
+    public UserDTO getUserById(Long id);
 }

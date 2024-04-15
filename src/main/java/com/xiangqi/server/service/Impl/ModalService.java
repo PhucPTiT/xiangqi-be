@@ -1,4 +1,4 @@
-package com.xiangqi.server.Service.Impl;
+package com.xiangqi.server.service.Impl;
 
 import com.xiangqi.server.entity.Modal;
 import com.xiangqi.server.repository.ModalRepository;
@@ -29,6 +29,11 @@ public class ModalService {
     public List<Modal> getAllModal() {
         List<Modal> modals = modalRepository.findAll();
         return modals;
+    }
+
+    public Modal findModalByName(String name) {
+        Modal modal = modalRepository.findByName(name);
+        return modal;
     }
 
 

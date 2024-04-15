@@ -1,7 +1,7 @@
 package com.xiangqi.server.Controller;
 
 
-import com.xiangqi.server.Service.Impl.ModalService;
+import com.xiangqi.server.service.Impl.ModalService;
 import com.xiangqi.server.entity.Modal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -47,5 +47,12 @@ public class ModalController {
     public ResponseEntity getModal() {
         List<Modal> modals = modalService.getAllModal();
         return new ResponseEntity(modals, HttpStatus.OK);
+    }
+
+    @GetMapping("/modal/{name}")
+    public ResponseEntity getModalByName(@PathVariable String name) {
+        Modal modal = modalService.findModalByName(name);
+        System.out.println(modal.getName());
+        return new ResponseEntity(modal, HttpStatus.OK);
     }
 }

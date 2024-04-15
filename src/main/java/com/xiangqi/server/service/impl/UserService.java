@@ -60,4 +60,10 @@ public class UserService implements IUserService {
         }
         return null;
     }
+
+    @Override
+    public UserDTO getUserById(Long id) {
+        User user = userRepository.findById(id).get();
+        return userConverter.toDTO(user);
+    }
 }

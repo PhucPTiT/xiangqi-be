@@ -36,8 +36,8 @@ public class MatchConverter {
         matchDTO.setId(match.getId());
         matchDTO.setTime(match.getTime().toString());
         matchDTO.setResult(match.getResult());
-        matchDTO.setUser(userConverter.toDTO(match.getUser()));
-        matchDTO.setModal(modalConverter.toDTO(match.getModal()));
+        matchDTO.setUserId(match.getUser().getId());
+        matchDTO.setModalId(match.getModal().getId());
         return matchDTO;
     }
 
