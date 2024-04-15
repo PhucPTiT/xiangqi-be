@@ -1,7 +1,7 @@
 package com.xiangqi.server.controller;
 
 import com.xiangqi.server.dto.UserDTO;
-import com.xiangqi.server.service.impl.UserService;
+import com.xiangqi.server.service.Impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -58,6 +58,11 @@ public class UserAPI {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok(userService.login(userDTO));
+    }
+
+    @GetMapping("/list")
+    public List<UserDTO> getUserbyKey(@RequestParam String key) {
+        return userService.getUserByKey(key);
     }
 
 }

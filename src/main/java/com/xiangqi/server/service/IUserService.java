@@ -14,4 +14,6 @@ public interface IUserService {
     public UserDTO login(UserDTO userDTO);
 
     public UserDTO getUserById(Long id);
+
+    public List< UserDTO> getUserByKey(String username);
 }

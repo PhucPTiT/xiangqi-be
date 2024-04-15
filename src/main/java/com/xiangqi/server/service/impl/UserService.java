@@ -1,4 +1,4 @@
-package com.xiangqi.server.service.impl;
+package com.xiangqi.server.service.Impl;
 
 import com.xiangqi.server.converter.UserConverter;
 import com.xiangqi.server.dto.UserDTO;
@@ -65,5 +65,15 @@ public class UserService implements IUserService {
     public UserDTO getUserById(Long id) {
         User user = userRepository.findById(id).get();
         return userConverter.toDTO(user);
+    }
+
+    @Override
+    public List<UserDTO> getUserByKey(String key) {
+        List<User> users = userRepository.searchUsersByKey(key);
+        List<UserDTO> userDTOS = new ArrayList<>();
+        for (User user : users) {
+            userDTOS.add(userConverter.toDTO(user));
+        }
+        return userDTOS;
     }
 }
